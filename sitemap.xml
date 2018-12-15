@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/12/15/javascript-learn-6/</loc>
+    
+    <lastmod>2018-12-15T15:24:12.196Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/12/15/javascript-learn-7/</loc>
+    
+    <lastmod>2018-12-15T15:12:46.763Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/12/09/javascript-learn-5/</loc>
+    
+    <lastmod>2018-12-15T11:42:15.629Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/12/09/JavaScript%E5%AD%A6%E4%B9%A03/</loc>
     
-    <lastmod>2018-12-09T09:01:39.246Z</lastmod>
+    <lastmod>2018-12-15T11:41:58.326Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/12/09/javascript-learn-4/</loc>
+    
+    <lastmod>2018-12-09T09:42:23.771Z</lastmod>
     
   </url>
   
