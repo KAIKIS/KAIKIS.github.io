@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-02T13:55:45.602Z</updated>
+  <updated>2018-12-09T09:01:39.246Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript学习3</title>
+    <link href="http://yoursite.com/2018/12/09/JavaScript%E5%AD%A6%E4%B9%A03/"/>
+    <id>http://yoursite.com/2018/12/09/JavaScript学习3/</id>
+    <published>2018-12-09T08:49:00.000Z</published>
+    <updated>2018-12-09T09:01:39.246Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h1><h2 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h2><p>创建<code>Object</code>类型有两种方式：  </p><ol><li><p>通过new</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name = <span class="string">"a"</span>;</span><br><span class="line">person.age = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></li><li><p>使用对象字面量表示法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name = <span class="string">"a"</span>;</span><br><span class="line">    age = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;引用类型&quot;&gt;&lt;a href=&quot;#引用类型&quot; class=&quot;headerlink&quot; title=&quot;引用类型&quot;&gt;&lt;/a&gt;引用类型&lt;/h1&gt;&lt;h2 id=&quot;Object类型&quot;&gt;&lt;a href=&quot;#Object类型&quot; class=&quot;headerlink&quot; title=&quot;O
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>对值传递的一些思考</title>
+    <link href="http://yoursite.com/2018/12/08/%E5%AF%B9%E5%80%BC%E4%BC%A0%E9%80%92%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/"/>
+    <id>http://yoursite.com/2018/12/08/对值传递的一些思考/</id>
+    <published>2018-12-08T10:39:30.000Z</published>
+    <updated>2018-12-08T16:47:15.910Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Java中，我们知道有基本类型和引用类型，比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">String b = <span class="string">"20"</span>;</span><br></pre></td></tr></table></figure></p><p>对于基本类型，变量中保存着实际的值，赋值运算符会直接改变变量里面的值；<br>对于引用类型，变量里保存着实际对象的地址，赋值运算符会改变引用中保存的地址。  </p><p>那么对于向方法中传递参数时，可以分为以下几种情形。  </p><ol><li><p>传递基本类型</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">int</span> num = <span class="number">2</span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">test1</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">       a = <span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line">    System.out.println(num);<span class="comment">//2</span></span><br><span class="line">   ```  </span><br><span class="line"><span class="number">2</span>. 传递引用类型，传递引用类型也可以分为两种：  </span><br><span class="line">    <span class="number">1</span>. 传递`immutable`对象时，比如String</span><br><span class="line">    ```java</span><br><span class="line">    String a = <span class="string">"h"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">test2</span><span class="params">(String b)</span></span>&#123;</span><br><span class="line">        b = <span class="string">"hh"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(a);<span class="comment">//h</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p>传递普通对象时  </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Person person = <span class="keyword">new</span> Person(<span class="number">3</span>, <span class="string">"aa"</span>);</span><br><span class="line">change(person);</span><br><span class="line">System.out.println(person);<span class="comment">//aaa,4</span></span><br><span class="line">change2(person);</span><br><span class="line">System.out.println(person);<span class="comment">//aaa,4</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(Person p)</span> </span>&#123;</span><br><span class="line">    p.age = <span class="number">4</span>;</span><br><span class="line">    p.name = <span class="string">"aaa"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change2</span><span class="params">(Person p2)</span> </span>&#123;</span><br><span class="line">    p2 = <span class="keyword">new</span> Person(<span class="number">5</span>, <span class="string">"aaaa"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> age, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">","</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里有一个问题，为什么两次的输出是一样的，也就是说<code>change2()</code>没有改变原来的对象？  </p></li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Java中，我们知道有基本类型和引用类型，比如：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计笔记2</title>
+    <link href="http://yoursite.com/2018/12/02/JavaScript%E5%AD%A6%E4%B9%A02/"/>
+    <id>http://yoursite.com/2018/12/02/JavaScript学习2/</id>
+    <published>2018-12-02T14:13:19.000Z</published>
+    <updated>2018-12-08T13:55:06.335Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="变量、作用域和内存问题"><a href="#变量、作用域和内存问题" class="headerlink" title="变量、作用域和内存问题"></a>变量、作用域和内存问题</h1><p>ECMAScript变量包含了两种数据类型的值：</p><ul><li>基本类型：之前的5种基本数据类型</li><li>引用类型：和Java类似。<code>Object</code>类型。  </li></ul><h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><h3 id="动态属性"><a href="#动态属性" class="headerlink" title="动态属性"></a>动态属性</h3><p>对于引用类型，可以动态的为其添加属性和方法。但不能对基本类型这样操作。  </p><h3 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h3><p>和Java类似，对于基本类型，都是值传递；对于引用类型，都是引用传递。  </p><h3 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h3><p>和Java相同。  </p><h3 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h3><p>可以使用<code>instanceof</code>来判断该对象是什么类型的对象。</p><h2 id="执行环境与作用域"><a href="#执行环境与作用域" class="headerlink" title="执行环境与作用域"></a>执行环境与作用域</h2><p>执行环境定义了变量或函数有权访问的其它数据，决定了它们各自的行为。<br>全局执行环境是最外围的执行环境。在Web浏览器中，全局执行对象是<code>window</code>对象，因为所有全局变量和函数都是作为<code>window</code>对象的属性和方法创建的。<br>每个函数也有自己的执行环境，当执行流进入一个函数时，函数得环境就会被推入一个环境栈中，函数执行完毕后，栈将其弹出。  </p><h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>作用域链的用途时保证对执行环境有权访问的所有变量和函数的有序访问。<br>作用域链的前端始终都是当前执行的代码所在环境的变量对象。下一个对象来自包含环境直到全局执行环境。<br>延长作用域链：有些语句可以在作用域链的前端临时增加一个变量对象，该变量对象会在代码执行后被移除，比如  </p><ul><li>try-catch中的catch块：创建一个新的变量对象。</li><li>with语句：将指定的最想添加到链中。  </li></ul><p>在<code>JavaScript</code>中没有块级作用域，比如如下例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> color = <span class="string">"blue"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(color);<span class="comment">//blue</span></span><br></pre></td></tr></table></figure></p><p>在Java中，color在if执行完成后会被销毁，在JavaScript中不会，在上面的例子中添加到了全局对象中。</p><h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><p>暂时理解为和Java相同。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;变量、作用域和内存问题&quot;&gt;&lt;a href=&quot;#变量、作用域和内存问题&quot; class=&quot;headerlink&quot; title=&quot;变量、作用域和内存问题&quot;&gt;&lt;/a&gt;变量、作用域和内存问题&lt;/h1&gt;&lt;p&gt;ECMAScript变量包含了两种数据类型的值：&lt;/p&gt;
+&lt;ul&gt;
+
+      
+    
+    </summary>
+    
+      <category term="JavaScript笔记" scheme="http://yoursite.com/categories/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Code" scheme="http://yoursite.com/tags/Code/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript高级程序设计笔记1</title>
